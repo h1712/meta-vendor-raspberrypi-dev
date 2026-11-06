@@ -9,7 +9,7 @@ RDKROOT := "${@os.path.abspath(os.path.dirname(d.getVar('FILE', True)) + '/../..
 include manifest_vars.conf
 
 BBLAYERS ?= " \
-        ${MANIFEST_PATH_POKY}/meta \
+        ${MANIFEST_PATH_OPENEMBEDDED_CORE}/meta \
         ${MANIFEST_PATH_OPENEMBEDDED}/meta-oe \
         ${MANIFEST_PATH_OPENEMBEDDED}/meta-python \
         ${MANIFEST_PATH_OPENEMBEDDED}/meta-multimedia \
