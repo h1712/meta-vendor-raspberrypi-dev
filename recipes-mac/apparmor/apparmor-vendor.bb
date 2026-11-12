@@ -4,8 +4,9 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=175792518e4ac015ab6696d16c4f607e"
 
 SRC_URI = "${CMF_GITHUB_ROOT}/rdkvhal-apparmor-raspberrypi4;${CMF_GIT_SRC_URI_SUFFIX};destsuffix=git"
 SRC_URI += "${CMF_GITHUB_ROOT}/rdk-apparmor-profiles.git;${CMF_GIT_SRC_URI_SUFFIX};destsuffix=git/rdk-apparmor-profiles;name=rdk-apparmor-profiles"
+SRCREV_FORMAT = "default_rdk-apparmor-profiles"
 
-S = "${WORKDIR}/git"
+S = "${RPI_UNPACKDIR}/git"
 
 DEPENDS += "virtual/kernel"
 

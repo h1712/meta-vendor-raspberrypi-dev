@@ -107,7 +107,7 @@ do_install() {
     fi
     
     # Install GPU configuration
-    install -m 0444 ${WORKDIR}/config.json ${GPU_LAYER_CONFDIR}/config.json
+    install -m 0444 ${RPI_UNPACKDIR}/config.json ${GPU_LAYER_CONFDIR}/config.json
 }
 
 # Package contents

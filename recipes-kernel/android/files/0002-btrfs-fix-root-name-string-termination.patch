@@ -1,0 +1,20 @@
+Subject: [PATCH] btrfs: include terminator in root name table
+
+The "BLOCK_GROUP_TREE" name is 16 characters long. The 16-byte array
+therefore has no room for its terminating NUL, which GCC diagnoses and
+which makes the value unsafe to use as a C string.
+
+Upstream-Status: Pending
+
+---
+ fs/btrfs/print-tree.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/fs/btrfs/print-tree.c b/fs/btrfs/print-tree.c
+index 5ec381e..c3a9d12 100644
+--- a/fs/btrfs/print-tree.c
++++ b/fs/btrfs/print-tree.c
+@@ -12,2 +12,2 @@
+-	char name[16];
++	char name[17];
+ };

@@ -3,6 +3,9 @@ require conf/distro/include/repo-details.inc
 include conf/include/rdke-vendor-bbmask.inc
 include conf/include/vendor_pkg_versions.inc
 
+RPI_UNPACKDIR = "${WORKDIR}"
+RPI_UNPACKDIR:wrynose = "${UNPACKDIR}"
+
 #Enable esdk
 DISTRO_FEATURES:append = " VENDOR"
 DISTRO_FEATURES:append = " enable_esdk"

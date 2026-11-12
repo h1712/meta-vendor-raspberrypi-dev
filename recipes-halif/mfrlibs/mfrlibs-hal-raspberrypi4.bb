@@ -6,10 +6,9 @@ DEPENDS = "iarmmgrs-hal-headers iarmbus-headers"
 
 SRC_URI = "${CMF_GITHUB_ROOT}/rdkvhal-mfrlibs-raspberrypi4;${CMF_GIT_SRC_URI_SUFFIX}"
 
-S = "${WORKDIR}/git"
+S = "${RPI_UNPACKDIR}/git"
 
 PROVIDES = "virtual/mfrlib"
-RPROVIDES:${PN} = "virtual/mfrlib"
 
 EXTRA_OECONF += "--enable-thermalprotection"
 ## Enable to limit mfrhal library runtime to single instance if required

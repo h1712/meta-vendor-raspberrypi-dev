@@ -71,8 +71,8 @@ config_setup() {
 
     # Copy defconfig to .config if .config does not exist. This allows
     # recipes to manage the .config themselves in do_configure:prepend().
-    if [ -f "${WORKDIR}/defconfig" ] && [ ! -f "${B}/.config" ]; then
-        cp "${WORKDIR}/defconfig" "${B}/.config"
+    if [ -f "${RPI_UNPACKDIR}/defconfig" ] && [ ! -f "${B}/.config" ]; then
+        cp "${RPI_UNPACKDIR}/defconfig" "${B}/.config"
     fi
 }
 
@@ -109,8 +109,8 @@ do_compile:append() {
     fi
 }
 
-# RDKVREFPLT-3709: do_image_wic error - In kirkstone, kernel_do_install task in kernel.bbclass doesnt 
-# create symlink for KERNEL_IMAGETYPE which is required by do_image_wic to create wic image.
+# RDKVREFPLT-3709: do_image_wic requires a KERNEL_IMAGETYPE symlink; kernel_do_install
+# in both Kirkstone and Wrynose installs only the versioned kernel image.
 do_install:append() {
         ln -sf ${imageType}-${KERNEL_VERSION} ${D}/${KERNEL_IMAGEDEST}/${imageType}
 }

@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7ca
 SRC_URI = "file://network_setup.sh \
            file://network-setup.service"
 
-S = "${WORKDIR}"
+S = "${RPI_UNPACKDIR}"
 
 inherit systemd
 
@@ -19,10 +19,10 @@ do_compile[noexec] = "1"
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 ${WORKDIR}/network_setup.sh ${D}${bindir}/network_setup.sh
+    install -m 0755 ${S}/network_setup.sh ${D}${bindir}/network_setup.sh
 
     install -d ${D}${systemd_system_unitdir}
-    install -m 0644 ${WORKDIR}/network-setup.service ${D}${systemd_system_unitdir}/network-setup.service
+    install -m 0644 ${S}/network-setup.service ${D}${systemd_system_unitdir}/network-setup.service
 }
 
 FILES:${PN} += "${systemd_unitdir}/system/*"

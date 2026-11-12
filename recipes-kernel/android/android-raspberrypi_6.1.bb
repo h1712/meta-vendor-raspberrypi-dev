@@ -12,6 +12,8 @@ SRC_URI = " \
     file://disable_nnp_lsm_check.patch \
     file://video-drivers.cfg \
     file://disable-framebuffer-console.cfg \
+    file://0002-btrfs-fix-root-name-string-termination.patch \
+    file://0003-btrfs-fix-kvcalloc-argument-order.patch \
     file://0001-RDKEVL-6480-RPI-Kernel-ACK6.1-CompilationErrorFix.patch \
     file://apparmor.cfg \
     file://rdkv.cfg \

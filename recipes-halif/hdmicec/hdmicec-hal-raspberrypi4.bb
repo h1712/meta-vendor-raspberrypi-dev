@@ -6,14 +6,9 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 
 SRC_URI = "${CMF_GITHUB_ROOT}/rdkvhal-hdmicec-raspberrypi4;${CMF_GIT_SRC_URI_SUFFIX}"
 
-S = "${WORKDIR}/git"
+S = "${RPI_UNPACKDIR}/git"
 
 PROVIDES = " \
-    virtual/hdmicec-hal \
-    virtual/vendor-hdmicec-hal \
-    "
-
-RPROVIDES:${PN} = " \
     virtual/hdmicec-hal \
     virtual/vendor-hdmicec-hal \
     "

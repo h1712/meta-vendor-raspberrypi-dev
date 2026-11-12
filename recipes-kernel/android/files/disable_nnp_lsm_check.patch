@@ -16,6 +16,8 @@ Inorder to solve this, potential solutions were to inherit current profile or Pr
 Since they didnt work, we are temporarily commenting the check for NNP here, and will uncomment
 this when we get the proper fix.
 
+Upstream-Status: Inappropriate [RDK-specific temporary workaround]
+
 Index: kernel-source/security/apparmor/domain.c
 ===================================================================
 --- kernel-source.orig/security/apparmor/domain.c
@@ -36,4 +38,3 @@ Index: kernel-source/security/apparmor/domain.c
  
  	if (bprm->unsafe & LSM_UNSAFE_SHARE) {
  		/* FIXME: currently don't mediate shared state */
-

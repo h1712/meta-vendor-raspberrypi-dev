@@ -1,7 +1,6 @@
-S = "${WORKDIR}/git"
+S = "${RPI_UNPACKDIR}/git"
 
 PROVIDES = "virtual/vendor-westeros-sink"
-RPROVIDES:${PN} = "virtual/vendor-westeros-sink"
 
 SINK_SOC_PATH = "${@bb.utils.contains('MACHINE_FEATURES', 'vc4graphics', 'v4l2', 'rpi', d)}"
 

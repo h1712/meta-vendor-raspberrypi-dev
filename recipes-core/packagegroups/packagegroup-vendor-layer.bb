@@ -16,8 +16,8 @@ RDEPENDS:${PN} = " \
         pi-bluetooth \
         sysint-soc \
         systemaudioplatform \
-        virtual/vendor-westeros-soc \
-        virtual/vendor-westeros-sink \
+        westeros-soc-drm \
+        westeros-sink \
         rdk-gstreamer-utils-platform \
         ${@bb.utils.contains('DISTRO_FEATURES', 'apparmor', 'apparmor-vendor', '', d)} \
         displayinfo-soc \

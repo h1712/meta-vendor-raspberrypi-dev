@@ -4,6 +4,8 @@ Date: Thu, 11 Sep 2025 13:35:09 +0000
 Subject: [PATCH] RDKEVL-6480-[RPI][Kernel 6.12] Build Vendor test image with
  kernel 6.1. Patch added for fix the compilation error of kernel Modules.
 
+Upstream-Status: Inappropriate [RDK vendor kernel compatibility]
+
 ---
  include/drm/drm_bridge.h | 8 ++++++++
  include/drm/drm_panel.h  | 6 ++++++
@@ -47,4 +49,3 @@ index a10dbf0d4429..94cdf5bed245 100644
  void drm_panel_init(struct drm_panel *panel, struct device *dev,
 -- 
 2.25.1
-

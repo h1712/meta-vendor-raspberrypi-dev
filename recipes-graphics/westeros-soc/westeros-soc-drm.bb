@@ -7,7 +7,7 @@ LICENSE_LOCATION = "${S}/LICENSE"
 LIC_FILES_CHKSUM = "file://${LICENSE_LOCATION};md5=7df5a8706277b586ca000838046993d1"
 SRC_URI = "${WESTEROS_SOC_URI}"
 
-S = "${WORKDIR}/git"
+S = "${RPI_UNPACKDIR}/git"
 
 COMPATIBLE_MACHINE = "(hikey-32|dragonboard-410c-32|dragonboard-820c-32|poplar|imx8mqevk)"
 
@@ -18,12 +18,6 @@ PROVIDES = " \
     virtual/vendor-westeros-soc \
     westeros-soc \
     "
-RPROVIDES:${PN} = " \
-    virtual/westeros-soc \
-    virtual/vendor-westeros-soc \
-    westeros-soc \
-    "
-
 CFLAGS:append = " -I${STAGING_INCDIR}/libdrm"
 
 SECURITY_CFLAGS:remove = "-fpie"
