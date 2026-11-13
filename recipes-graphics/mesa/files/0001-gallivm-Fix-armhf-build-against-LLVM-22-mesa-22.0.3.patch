@@ -1,0 +1,11 @@
+Subject: [PATCH] gallivm: Fix armhf build against LLVM 22
+Upstream-Status: Submitted [https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/40161]
+
+Adapt the LLVM 22 iterator compatibility fix to Mesa 22.0.3's unqualified
+StringMapIterator type.
+
+--- a/src/gallium/auxiliary/gallivm/lp_bld_misc.cpp
++++ b/src/gallium/auxiliary/gallivm/lp_bld_misc.cpp
+@@ -388 +388 @@
+-   for (StringMapIterator<bool> f = features.begin();
++   for (auto f = features.begin();
