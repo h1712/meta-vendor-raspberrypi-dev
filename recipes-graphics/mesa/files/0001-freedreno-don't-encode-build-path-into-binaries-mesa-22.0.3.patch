@@ -1,0 +1,25 @@
+Subject: [PATCH] freedreno: don't encode build path into binaries
+Upstream-Status: Submitted [https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/30206]
+
+The runtime RNN database path should not embed the build directory. Keep the
+absolute source path for build-time generators, but use a source-tree relative
+path for the compiled-in runtime default.
+
+--- a/src/freedreno/meson.build
++++ b/src/freedreno/meson.build
+@@ -24,2 +24,3 @@
+ rnn_src_path = meson.source_root() + '/src/freedreno/registers'
++rnn_rel_path = 'src/freedreno/registers'
+ rnn_install_path = get_option('datadir') + '/freedreno/registers'
+@@ -26 +27 @@
+-rnn_path = rnn_src_path + ':' + get_option('prefix') + '/' + rnn_install_path
++rnn_path = rnn_rel_path + ':' + get_option('prefix') + '/' + rnn_install_path
+--- a/src/freedreno/registers/meson.build
++++ b/src/freedreno/registers/meson.build
+@@ -48,4 +48,6 @@
+   )
+ endforeach
+ 
++devenv.set('RNN_PATH', meson.current_source_dir())
++
+ subdir('adreno')
