@@ -60,7 +60,6 @@ PACKAGE_ARCH:pn-libgles2-mesa = "${VENDOR_LAYER_EXTENSION}"
 PACKAGE_ARCH:pn-libgl-mesa = "${VENDOR_LAYER_EXTENSION}"
 PACKAGE_ARCH:pn-libgbm = "${VENDOR_LAYER_EXTENSION}"
 
-PV:pn-librsvg = "2.40.21"
 PR:pn-librsvg = "r0"
 PACKAGE_ARCH:pn-librsvg = "${VENDOR_LAYER_EXTENSION}"
 
